@@ -38,8 +38,16 @@ public class HelperCubata extends SQLiteOpenHelper {
             = "bodega";
     public static final String COLUMN__IDBAR
             = "_idbar";
+    public static final String COLUMN_IDLOCALITZACIO
+            = "idlocalitzacio";
     public static final String COLUMN_NOMBAR
             = "nombar";
+    public static final String TABLE_LOCALITZACIO
+            = "localitzacio";
+    public static final String COLUMN__IDLOCALITZACIO
+            = "_idlocalitzacio";
+    public static final String COLUMN_NOMLOCALITZACIO
+            = "nomlocalitzacio";
     public static final String TABLE_TIPUS
             = "tipus";
     public static final String COLUMN__TIPUS
@@ -48,7 +56,7 @@ public class HelperCubata extends SQLiteOpenHelper {
             = "alcoholicapp";
     private static final int DATABASE_VERSION= 1;
 
-    private static final String DATABASE_CREATE_cubata
+    private static final String DATABASE_CREATE_CUBATA
             = "create table "
             + TABLE_CUBATA
             + "("
@@ -84,10 +92,10 @@ public class HelperCubata extends SQLiteOpenHelper {
             + "("
             + COLUMN__IDBAR
             + " integer primary key autoincrement, "
-            +
-            COLUMN_NOMBAR
-            +
-            " text not null);"
+            + COLUMN_IDLOCALITZACIO
+            + " integer,"
+            +COLUMN_NOMBAR
+            + " text not null);"
             ;
     private static final String DATABASE_CREATE_TIPUS
             = "create table "
@@ -96,15 +104,25 @@ public class HelperCubata extends SQLiteOpenHelper {
             + COLUMN__TIPUS
             + " text not null primary key);";
 
+    private static final String DATABASE_CREATE_LOCALITZACIO
+            = "create table "
+            + TABLE_LOCALITZACIO
+            + "("
+            + COLUMN_NOMLOCALITZACIO
+            + " text,"
+            + COLUMN__IDLOCALITZACIO
+            + " integer primary key autoincrement);";
+
     public HelperCubata(Context context) {
         super(context,DATABASE_NAME,null,DATABASE_VERSION);
     }
 
     @Override
     public void onCreate(SQLiteDatabase database) {
-        database.execSQL(DATABASE_CREATE_cubata);
+        database.execSQL(DATABASE_CREATE_CUBATA);
         database.execSQL(DATABASE_CREATE_BAR);
         database.execSQL(DATABASE_CREATE_TIPUS);
+        database.execSQL(DATABASE_CREATE_LOCALITZACIO);
         database.execSQL(" insert into "+ TABLE_TIPUS+ "(tipus) values(('Combinat'))");
         database.execSQL(" insert into "+ TABLE_TIPUS+ "(tipus) values(('Cocktail'))");
         database.execSQL(" insert into "+ TABLE_TIPUS+ "(tipus) values(('Chupito'))");
@@ -116,6 +134,7 @@ public class HelperCubata extends SQLiteOpenHelper {
         Log.w(HelperCubata.class.getName(),"Modificant desde la versió "+ oldVersion+ " a "+ newVersion);
         db.execSQL("DROP TABLE IF EXISTS "+ TABLE_BAR);
         db.execSQL("DROP TABLE IF EXISTS "+ TABLE_TIPUS);
+        db.execSQL("DROP TABLE IF EXISTS "+ TABLE_LOCALITZACIO);
         db.execSQL("DROP TABLE IF EXISTS "+ TABLE_CUBATA);
         onCreate(db);
     }

@@ -3,6 +3,7 @@ package arnau.cubatasbbdd;
 public class Bar {
     private long id;
     private String nomBar;
+    private long idLocalitzacio;
 
     public Bar() {
         this.id = -1;
@@ -22,5 +23,13 @@ public class Bar {
     
     public void setnomBar(String nomBar) {
         this.nomBar = nomBar;
+    }
+
+    public long getIdLocalitzacio() {
+        return idLocalitzacio;
+    }
+
+    public void setIdLocalitzacio(long idLocalitzacio) {
+        this.idLocalitzacio = idLocalitzacio;
     }
 }

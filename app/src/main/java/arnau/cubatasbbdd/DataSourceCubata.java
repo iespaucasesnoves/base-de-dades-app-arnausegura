@@ -27,6 +27,16 @@ public class DataSourceCubata {
             HelperCubata.COLUMN_FOTO,
             HelperCubata.COLUMN_TIPUS
     };
+    private String[] allColumnsBar
+            = {HelperCubata.COLUMN__IDBAR,
+           HelperCubata.COLUMN_NOMBAR,
+            HelperCubata.COLUMN_IDLOCALITZACIO
+    };
+
+    private String[] allColumnsLocalitzacio
+            = {HelperCubata.COLUMN__IDLOCALITZACIO,
+            HelperCubata.COLUMN_NOMLOCALITZACIO,
+    };
 
     public DataSourceCubata(Context context) {
         dbAjuda= new HelperCubata(context);
@@ -73,6 +83,32 @@ public class DataSourceCubata {
         return cubata;
     }
 
+    public Bar createBar(Bar bar) {
+        // insert d'un nou bar
+        ContentValues values
+                = new ContentValues();
+        values.put(HelperCubata.COLUMN_NOMBAR,
+                bar.getnomBar());
+        values.put(HelperCubata.COLUMN_IDLOCALITZACIO,
+                 bar.getIdLocalitzacio());
+
+        long insertId= database.insert(HelperCubata.TABLE_BAR,null,values);
+        bar.setId(insertId);
+        return bar;
+    }
+
+    public Localitzacio createLocalitzacio(Localitzacio localitzacio) {
+        // insert d'un nou localitzacio
+        ContentValues values
+                = new ContentValues();
+        values.put(HelperCubata.COLUMN_NOMLOCALITZACIO,
+                localitzacio.getLloc());
+
+        long insertId= database.insert(HelperCubata.TABLE_LOCALITZACIO,null,values);
+        localitzacio.setId(insertId);
+        return localitzacio;
+    }
+
     public boolean updateCubata(Cubata cubata) {
         ContentValues values
                 = new ContentValues();
@@ -104,10 +140,40 @@ public class DataSourceCubata {
         return database.update(HelperCubata.TABLE_CUBATA,values, HelperCubata.COLUMN_ID+ "="+ id,null)> 0;
     }
 
+    public boolean updateBar(Bar bar) {
+        ContentValues values
+                = new ContentValues();
+        long id = bar.getId();
+        values.put(HelperCubata.COLUMN_NOMBAR,
+                bar.getnomBar());
+        return database.update(HelperCubata.TABLE_BAR,values, HelperCubata.COLUMN_ID+ "="+ id,null)> 0;
+    }
+
+    public boolean updateLocalitzacio(Localitzacio localitzacio) {
+        ContentValues values
+                = new ContentValues();
+        long id = localitzacio.getId();
+        values.put(HelperCubata.COLUMN_NOMLOCALITZACIO,
+                localitzacio.getLloc());
+        return database.update(HelperCubata.TABLE_LOCALITZACIO,values, HelperCubata.COLUMN_ID+ "="+ id,null)> 0;
+    }
+
     public void deleteCubata(Cubata cubata) {
         long id = cubata.getId();
         database.delete(HelperCubata.TABLE_CUBATA,
                         HelperCubata.COLUMN_ID+ " = "+ id,null);
+    }
+
+    public void deleteBar(Bar bar) {
+        long id = bar.getId();
+        database.delete(HelperCubata.TABLE_BAR,
+                HelperCubata.COLUMN_ID+ " = "+ id,null);
+    }
+
+    public void deleteLocalitzacio(Localitzacio localitzacio) {
+        long id = localitzacio.getId();
+        database.delete(HelperCubata.TABLE_LOCALITZACIO,
+                HelperCubata.COLUMN_ID+ " = "+ id,null);
     }
 
     public Cubata getCubata(long id) {
