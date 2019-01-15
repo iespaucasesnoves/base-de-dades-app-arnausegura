@@ -14,28 +14,36 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ListAdapter;
 import android.widget.ListView;
+import android.widget.SimpleAdapter;
 import android.widget.TextView;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     private ListAdapter adapter;
+    private ListView listView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        ListView listView = findViewById(R.id.llista);
+        listView = findViewById(R.id.llista);
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                    @Override
-                    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                        String s = ((TextView) view.findViewById(R.id.id)).getText().toString();
-                        Intent in= new Intent(getApplicationContext(), EditaCubata.class);
-                        in.putExtra ("ID", s);
-                        startActivity(in);
-                    }
-                }.OnItemClickListener()
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                String s = ((TextView) view.findViewById(R.id.id)).getText().toString();
+                Intent in = new Intent(getApplicationContext(), EditaCubata.class);
+                in.putExtra("ID", s);
+                startActivity(in);
+            }
+        });
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -43,8 +51,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                Intent in = new Intent(getApplicationContext(), EditaCubata.class);
+                in.putExtra("ID", "");
+                startActivity(in);
             }
         });
 
@@ -56,6 +65,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+        mostraCubatas();
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        mostraCubatas();
     }
 
     @Override
@@ -113,5 +129,39 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    public void mostraCubatas() {
+        // Obrim la base de dades
+        DataSourceCubata bd;
+        bd = new DataSourceCubata(this);
+        bd.open();
+        // Obtenim tots els cubatas
+        List<Cubata> llistaCubatas = bd.getAllCubata();
+        ArrayList<HashMap<String, String>> llista = new ArrayList<HashMap<String, String>>();
+        for (int i= 0; i < llistaCubatas.size(); i++) {
+            HashMap<String, String> map = new HashMap<String, String>();
+            Cubata cubata = llistaCubatas.get(i);
+            map.put("id",String.valueOf(cubata.getId()));
+            map.put("nomVi",(cubata.getnomCubata()));
+            map.put("data",cubata.getData());
+            map.put("tipus",cubata.getTipus());
+            llista.add(map);
+        }
+//Tanquem la BD
+        bd.close();
+//Assignar a la listview
+        adapter = new SimpleAdapter(this,llista, R.layout.llista,new String[]{
+                        "id",
+                        "nomCubata",
+                        "data",
+                        "tipus"
+                },
+                new int[]{R.id.id,
+                        R.id.nomCubata,
+                        R.id.data,
+                        R.id.tipus
+                });
+        listView.setAdapter(adapter);
     }
 }

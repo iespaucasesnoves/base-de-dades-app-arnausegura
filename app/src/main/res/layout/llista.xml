@@ -11,4 +11,34 @@
         android:layout_marginStart="26dp"
         android:layout_marginTop="26dp"
         android:visibility="invisible" />
+
+    <TextView
+        android:id="@+id/nomCubata"
+        android:layout_width="240dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="28dp"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/data"
+        android:layout_width="240dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="27dp"
+        android:layout_marginTop="93dp"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/tipus"
+        android:layout_width="240dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="26dp"
+        android:layout_marginTop="59dp"
+        android:text="TextView" />
 </RelativeLayout>
