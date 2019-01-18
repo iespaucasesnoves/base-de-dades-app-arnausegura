@@ -7,9 +7,8 @@ import android.widget.EditText;
 
 public class EditaCubata extends AppCompatActivity {
 
-    private DataSourceCubata dsc;
-    private long id;
-    private Cubata cubata;
+    private DataSourceCubata dsc = new DataSourceCubata(this);
+    private Cubata cubata = new Cubata();
     private EditText nomCubata;
     private EditText graduacio;
     private EditText tipus;
@@ -29,35 +28,36 @@ public class EditaCubata extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edita_cubata);
-        this.id =Long.parseLong(getIntent().getStringExtra("ID"));
-        cubata = dsc.getCubata(id);
+//        this.id =Long.parseLong(getIntent().getStringExtra("ID"));
+//        cubata = dsc.getCubata(id);
         this.nomCubata=findViewById(R.id.nomCubata);
-        nomCubata.setText(cubata.getnomCubata());
         this.graduacio=findViewById(R.id.graduacio);
-        graduacio.setText(cubata.getGraduacio());
         this.tipus=findViewById(R.id.tipus);
-        tipus.setText(cubata.getTipus());
         this.data=findViewById(R.id.data);
-        data.setText(cubata.getData());
         this.comentari=findViewById(R.id.comentari);
-        comentari.setText(cubata.getComentari());
         this.nomBar=findViewById(R.id.nomBar);
-        nomBar.setText(Long.toString(cubata.getIdBar()));
         this.valOlfativa=findViewById(R.id.valOlfativa);
-        valOlfativa.setText(cubata.getValOlfativa());
         this.valGustativa=findViewById(R.id.valGustativa);
-        valGustativa.setText(cubata.getValGustativa());
         this.preu=findViewById(R.id.preu);
-        preu.setText(Double.toString(cubata.getPreu()));
         this.valVisual=findViewById(R.id.valVisual);
-        valVisual.setText(cubata.getValVisual());
         this.nota=findViewById(R.id.nota);
-        nota.setText(cubata.getNota());
         this.foto=findViewById(R.id.foto);
-        foto.setText(cubata.getFoto());
+//        valOlfativa.setText(cubata.getValOlfativa());
+//        nomCubata.setText(cubata.getnomCubata());
+//        graduacio.setText(cubata.getGraduacio());
+//        tipus.setText(cubata.getTipus());
+//        data.setText(cubata.getData());
+//        comentari.setText(cubata.getComentari());
+//        nomBar.setText(Long.toString(cubata.getIdBar()));
+//        valGustativa.setText(cubata.getValGustativa());
+//        preu.setText(Double.toString(cubata.getPreu()));
+//        valVisual.setText(cubata.getValVisual());
+//        nota.setText(cubata.getNota());
+//        foto.setText(cubata.getFoto());
     }
 
     public void Guardar(View v){
+        cubata.setId(1);
         cubata.setnomCubata(nomCubata.getText().toString());
         cubata.setGraduacio(graduacio.getText().toString());
         cubata.setTipus(tipus.getText().toString());
@@ -70,7 +70,7 @@ public class EditaCubata extends AppCompatActivity {
         cubata.setPreu(Double.parseDouble(preu.getText().toString()));
         cubata.setNota(Integer.parseInt(nota.getText().toString()));
         cubata.setFoto(foto.getText().toString());
-        dsc.updateCubata(cubata);
+        dsc.createCubata(cubata);
     }
 
 }

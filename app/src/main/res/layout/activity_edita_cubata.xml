@@ -9,22 +9,12 @@
     <EditText
         android:id="@+id/nomCubata"
         android:layout_width="357dp"
-        android:layout_height="25dp"
+        android:layout_height="wrap_content"
         android:layout_alignStart="@+id/foto"
         android:layout_alignParentTop="true"
+        android:layout_marginLeft="28dp"
         android:layout_marginTop="16dp"
-        android:text="EditText"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="16dp" />
-
-    <EditText
-        android:id="@+id/graduacio"
-        android:layout_width="194dp"
-        android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/tipus"
-        android:layout_alignTop="@+id/lloc"
-        android:layout_marginStart="163dp"
-        android:text="EditText"
+        android:text="Nom"
         tools:layout_editor_absoluteX="16dp"
         tools:layout_editor_absoluteY="16dp" />
 
@@ -34,53 +24,44 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="26dp"
-        android:layout_marginTop="50dp"
-        android:text="EditText"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="96dp"
+        android:text="Tipus"
         tools:layout_editor_absoluteX="16dp"
         tools:layout_editor_absoluteY="16dp" />
 
     <EditText
         android:id="@+id/data"
-        android:layout_width="357dp"
-        android:layout_height="25dp"
-        android:layout_alignBottom="@+id/lloc"
+        android:layout_width="364dp"
+        android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
-        android:layout_marginEnd="0dp"
-        android:layout_marginBottom="-228dp"
-        android:text="EditText"
+        android:layout_marginEnd="17dp"
+        android:layout_marginBottom="-387dp"
+        android:text="Data"
         tools:layout_editor_absoluteX="16dp"
         tools:layout_editor_absoluteY="16dp" />
 
     <EditText
         android:id="@+id/comentari"
-        android:layout_width="357dp"
-        android:layout_height="25dp"
+        android:layout_width="361dp"
+        android:layout_height="wrap_content"
         android:layout_alignStart="@+id/tipus"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="200dp"
-        android:text="EditText"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="16dp" />
-
-    <EditText
-        android:id="@+id/nomBar"
-        android:layout_width="357dp"
-        android:layout_height="25dp"
-        android:layout_alignParentEnd="true"
-        android:layout_centerVertical="true"
-        android:text="EditText"
+        android:layout_marginStart="0dp"
+        android:layout_marginBottom="146dp"
+        android:text="Comentari"
         tools:layout_editor_absoluteX="16dp"
         tools:layout_editor_absoluteY="16dp" />
 
     <EditText
         android:id="@+id/valOlfativa"
-        android:layout_width="104dp"
+        android:layout_width="108dp"
         android:layout_height="wrap_content"
         android:layout_alignStart="@+id/tipus"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="209dp"
-        android:text="EditText"
+        android:layout_marginStart="169dp"
+        android:layout_marginTop="322dp"
+        android:text="olor"
         tools:layout_editor_absoluteX="16dp"
         tools:layout_editor_absoluteY="16dp" />
 
@@ -90,8 +71,21 @@
         android:layout_height="wrap_content"
         android:layout_alignStart="@+id/tipus"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="179dp"
-        android:text="EditText"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="321dp"
+        android:text="Gust"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="16dp" />
+
+    <EditText
+        android:id="@+id/nomBar"
+        android:layout_width="106dp"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/tipus"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="-1dp"
+        android:layout_marginTop="413dp"
+        android:text="1"
         tools:layout_editor_absoluteX="16dp"
         tools:layout_editor_absoluteY="16dp" />
 
@@ -99,11 +93,10 @@
         android:id="@+id/preu"
         android:layout_width="153dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/lloc"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="13dp"
-        android:layout_marginEnd="204dp"
-        android:text="EditText"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="66dp"
+        android:text="3"
         tools:layout_editor_absoluteX="16dp"
         tools:layout_editor_absoluteY="16dp" />
 
@@ -114,8 +107,20 @@
         android:layout_alignStart="@+id/tipus"
         android:layout_alignParentTop="true"
         android:layout_marginStart="2dp"
-        android:layout_marginTop="146dp"
-        android:text="EditText"
+        android:layout_marginTop="245dp"
+        android:text="Vista"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="16dp" />
+
+    <EditText
+        android:id="@+id/graduacio"
+        android:layout_width="103dp"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/tipus"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="161dp"
+        android:layout_marginTop="253dp"
+        android:text="graduacio"
         tools:layout_editor_absoluteX="16dp"
         tools:layout_editor_absoluteY="16dp" />
 
@@ -127,30 +132,17 @@
         android:layout_alignParentEnd="true"
         android:layout_marginEnd="23dp"
         android:layout_marginBottom="0dp"
-        android:text="EditText"
+        android:text="10"
         tools:layout_editor_absoluteX="16dp"
         tools:layout_editor_absoluteY="16dp" />
 
     <EditText
         android:id="@+id/foto"
-        android:layout_width="353dp"
-        android:layout_height="102dp"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="52dp"
-        android:text="EditText"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="16dp" />
-
-    <EditText
-        android:id="@+id/lloc"
-        android:layout_width="146dp"
+        android:layout_width="321dp"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="77dp"
-        android:layout_marginEnd="211dp"
-        android:text="EditText"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="64dp"
+        android:text="Foto"
         tools:layout_editor_absoluteX="16dp"
         tools:layout_editor_absoluteY="16dp" />
 
