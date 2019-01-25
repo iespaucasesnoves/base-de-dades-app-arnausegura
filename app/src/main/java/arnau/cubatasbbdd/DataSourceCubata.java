@@ -221,37 +221,37 @@ public class DataSourceCubata {
                 1
         ));
         v.setGraduacio(cursor.getString(
-                4
+                2
         ));
         v.setData(cursor.getString(
-                5
+                3
         ));
         v.setComentari(cursor.getString(
+                4
+        ));
+        v.setIdBar(cursor.getLong(
+                5
+        ));
+        v.setIdBar(cursor.getLong(
                 6
         ));
-        v.setIdBar(cursor.getLong(
+        v.setPreu(cursor.getFloat(
                 7
         ));
-        v.setIdBar(cursor.getLong(
+        v.setValOlfativa(cursor.getString(
                 8
         ));
-        v.setPreu(cursor.getFloat(
+        v.setValGustativa(cursor.getString(
                 9
         ));
-        v.setValOlfativa(cursor.getString(
+        v.setValVisual(cursor.getString(
                 10
         ));
-        v.setValGustativa(cursor.getString(
+        v.setNota(cursor.getInt(
                 11
         ));
-        v.setValVisual(cursor.getString(
-                12
-        ));
-        v.setNota(cursor.getInt(
-                13
-        ));
         v.setFoto(cursor.getString(
-                14
+                12
         ));
         return v;
     }

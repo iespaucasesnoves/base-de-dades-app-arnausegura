@@ -57,7 +57,6 @@ public class EditaCubata extends AppCompatActivity {
     }
 
     public void Guardar(View v){
-        cubata.setId(1);
         cubata.setnomCubata(nomCubata.getText().toString());
         cubata.setGraduacio(graduacio.getText().toString());
         cubata.setTipus(tipus.getText().toString());
@@ -70,7 +69,9 @@ public class EditaCubata extends AppCompatActivity {
         cubata.setPreu(Double.parseDouble(preu.getText().toString()));
         cubata.setNota(Integer.parseInt(nota.getText().toString()));
         cubata.setFoto(foto.getText().toString());
+        dsc.open();
         dsc.createCubata(cubata);
+        dsc.close();
     }
 
 }

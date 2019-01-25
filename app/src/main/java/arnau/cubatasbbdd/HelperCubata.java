@@ -54,7 +54,7 @@ public class HelperCubata extends SQLiteOpenHelper {
             = "tipus";
     private static final String DATABASE_NAME
             = "alcoholicapp";
-    private static final int DATABASE_VERSION= 1;
+    private static final int DATABASE_VERSION= 4;
 
     private static final String DATABASE_CREATE_CUBATA
             = "create table "
@@ -127,6 +127,8 @@ public class HelperCubata extends SQLiteOpenHelper {
         database.execSQL(" insert into "+ TABLE_TIPUS+ "(tipus) values(('Cocktail'))");
         database.execSQL(" insert into "+ TABLE_TIPUS+ "(tipus) values(('Chupito'))");
         database.execSQL(" insert into "+ TABLE_TIPUS+ "(tipus) values(('Licor'))");
+        database.execSQL("insert into " + TABLE_CUBATA + "(nomcubata,graduacio,data,comentari,idbar,preu,valolfativa,valgustativa,valcubatasual," +
+                "nota,foto,tipus) values('RonCola','23º','23/10/19','','1','5','5','','','10','foto','Combinat')");
     }
 
     @Override
