@@ -5,21 +5,17 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_camera"
-            android:icon="@drawable/ic_menu_camera"
-            android:title="Import" />
+            android:id="@+id/Cubatas"
+            android:icon="@mipmap/ebul7npr"
+            android:title="Cubatas" />
         <item
-            android:id="@+id/nav_gallery"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="Gallery" />
+            android:id="@+id/Bars"
+            android:icon="@mipmap/y8swkcpg"
+            android:title="Afegir bars" />
         <item
-            android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="Slideshow" />
-        <item
-            android:id="@+id/nav_manage"
-            android:icon="@drawable/ic_menu_manage"
-            android:title="Tools" />
+            android:id="@+id/Localitzacio"
+            android:icon="@mipmap/f6zhow1i"
+            android:title=" Afegir localització" />
     </group>
 
 </menu>

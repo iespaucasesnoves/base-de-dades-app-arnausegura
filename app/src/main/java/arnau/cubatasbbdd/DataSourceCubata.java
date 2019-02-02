@@ -33,6 +33,10 @@ public class DataSourceCubata {
             HelperCubata.COLUMN_IDLOCALITZACIO
     };
 
+    private String[] allColumnsTipus
+            = {HelperCubata.COLUMN__TIPUS,
+    };
+
     private String[] allColumnsLocalitzacio
             = {HelperCubata.COLUMN__IDLOCALITZACIO,
             HelperCubata.COLUMN_NOMLOCALITZACIO,
@@ -212,6 +216,31 @@ public class DataSourceCubata {
         }
         cursor.close();
         return cubatas;
+    }
+
+    public List<String> getAllTipus(){
+        List<String> tipus = new ArrayList<String>();
+        Cursor cursor= database.query(HelperCubata.TABLE_TIPUS,
+                allColumnsTipus,
+                null,
+                null,
+                null,
+                null,
+                HelperCubata.COLUMN_DATA+ " DESC"
+        );
+        cursor.moveToFirst();
+        while (!cursor.isAfterLast()) {
+            String s = cursorToTipus(cursor);
+            tipus.add(s);
+            cursor.moveToNext();
+        }
+        cursor.close();
+        return tipus;
+    }
+
+    private String cursorToTipus(Cursor cursor) {
+        String s = cursor.getString(0);
+        return s;
     }
 
     private Cubata cursorToCubata(Cursor cursor) {

@@ -12,31 +12,22 @@
         android:layout_height="wrap_content"
         android:layout_alignStart="@+id/foto"
         android:layout_alignParentTop="true"
+        android:layout_marginStart="23dp"
         android:layout_marginLeft="28dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="14dp"
         android:text="Nom"
         tools:layout_editor_absoluteX="16dp"
         tools:layout_editor_absoluteY="16dp" />
 
     <EditText
-        android:id="@+id/tipus"
-        android:layout_width="145dp"
+        android:id="@+id/Data"
+        android:layout_width="357dp"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
+        android:layout_alignStart="@+id/foto"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="96dp"
-        android:text="Tipus"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="16dp" />
-
-    <EditText
-        android:id="@+id/data"
-        android:layout_width="364dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_marginEnd="17dp"
-        android:layout_marginBottom="-387dp"
+        android:layout_marginStart="26dp"
+        android:layout_marginLeft="28dp"
+        android:layout_marginTop="199dp"
         android:text="Data"
         tools:layout_editor_absoluteX="16dp"
         tools:layout_editor_absoluteY="16dp" />
@@ -48,31 +39,31 @@
         android:layout_alignStart="@+id/tipus"
         android:layout_alignParentBottom="true"
         android:layout_marginStart="0dp"
-        android:layout_marginBottom="146dp"
+        android:layout_marginBottom="276dp"
         android:text="Comentari"
         tools:layout_editor_absoluteX="16dp"
         tools:layout_editor_absoluteY="16dp" />
 
     <EditText
         android:id="@+id/valOlfativa"
-        android:layout_width="108dp"
+        android:layout_width="362dp"
         android:layout_height="wrap_content"
         android:layout_alignStart="@+id/tipus"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="169dp"
-        android:layout_marginTop="322dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="361dp"
         android:text="olor"
         tools:layout_editor_absoluteX="16dp"
         tools:layout_editor_absoluteY="16dp" />
 
     <EditText
         android:id="@+id/valGustativa"
-        android:layout_width="106dp"
+        android:layout_width="361dp"
         android:layout_height="wrap_content"
         android:layout_alignStart="@+id/tipus"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="2dp"
-        android:layout_marginTop="321dp"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="309dp"
         android:text="Gust"
         tools:layout_editor_absoluteX="16dp"
         tools:layout_editor_absoluteY="16dp" />
@@ -83,43 +74,36 @@
         android:layout_height="wrap_content"
         android:layout_alignStart="@+id/tipus"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="-1dp"
-        android:layout_marginTop="413dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="-3dp"
+        android:layout_marginTop="468dp"
+        android:layout_marginEnd="285dp"
         android:text="1"
         tools:layout_editor_absoluteX="16dp"
         tools:layout_editor_absoluteY="16dp" />
 
     <EditText
-        android:id="@+id/preu"
-        android:layout_width="153dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="36dp"
-        android:layout_marginEnd="66dp"
-        android:text="3"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="16dp" />
-
-    <EditText
         android:id="@+id/valVisual"
-        android:layout_width="103dp"
+        android:layout_width="355dp"
         android:layout_height="wrap_content"
         android:layout_alignStart="@+id/tipus"
         android:layout_alignParentTop="true"
         android:layout_marginStart="2dp"
-        android:layout_marginTop="245dp"
+        android:layout_marginTop="256dp"
         android:text="Vista"
         tools:layout_editor_absoluteX="16dp"
         tools:layout_editor_absoluteY="16dp" />
 
     <EditText
         android:id="@+id/graduacio"
-        android:layout_width="103dp"
+        android:layout_width="140dp"
         android:layout_height="wrap_content"
         android:layout_alignStart="@+id/tipus"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="161dp"
-        android:layout_marginTop="253dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="139dp"
+        android:layout_marginEnd="239dp"
         android:text="graduacio"
         tools:layout_editor_absoluteX="16dp"
         tools:layout_editor_absoluteY="16dp" />
@@ -130,29 +114,53 @@
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/tipus"
         android:layout_alignParentEnd="true"
-        android:layout_marginEnd="23dp"
-        android:layout_marginBottom="0dp"
+        android:layout_marginEnd="31dp"
+        android:layout_marginBottom="-45dp"
         android:text="10"
         tools:layout_editor_absoluteX="16dp"
         tools:layout_editor_absoluteY="16dp" />
 
     <EditText
-        android:id="@+id/foto"
-        android:layout_width="321dp"
+        android:id="@+id/Preu"
+        android:layout_width="165dp"
         android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="64dp"
+        android:layout_marginEnd="19dp"
+        android:layout_marginBottom="615dp"
+        android:text="0"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="16dp" />
+
+    <EditText
+        android:id="@+id/foto"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="86dp"
         android:text="Foto"
         tools:layout_editor_absoluteX="16dp"
         tools:layout_editor_absoluteY="16dp" />
 
     <Button
         android:id="@+id/guardar"
-        android:layout_width="wrap_content"
-        android:layout_height="35dp"
+        android:layout_width="157dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="13dp"
-        android:layout_toEndOf="@+id/valOlfativa"
-        android:text="Guardar"
-        android:onClick="Guardar"/>
+        android:layout_marginStart="127dp"
+        android:layout_marginEnd="127dp"
+        android:layout_marginBottom="26dp"
+        android:onClick="Guardar"
+        android:text="Guardar" />
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="180dp"
+        android:layout_height="34dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="211dp"
+        android:layout_marginBottom="612dp" />
 </RelativeLayout>
